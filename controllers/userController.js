@@ -44,7 +44,7 @@ const userController = {
     userExist = userExist.toObject();
     delete userExist.password;
     const token = jwt.sign(userExist, process.env.SECRET_KEY, {
-      expiresIn: "1s",
+      expiresIn: "1d",
     });
     return res.status(200).json({
       success: true,
